@@ -1,18 +1,19 @@
-name: Moje pierwsze Githubowe Workflow
+name : Moje pierwsze workflow
 on: [push]
 jobs:
-  Github-actions-one:
+  actions-1:
     runs-on: ubuntu-latest
     steps:
       - run: docker --version
       - run: python --version
-  Github-actions-two:
+  actions-2:
     runs-on: ubuntu-latest
     steps:
-      - name: docker --version
-        uses: python --version
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: pip install pylint
       - run: pylint app.py
-  Github-actions-three:
+  actions-3:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
